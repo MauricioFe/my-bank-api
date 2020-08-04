@@ -10,14 +10,14 @@ app.use("/account", accountsRouter);
 app.listen(3000, async () => {
 
     try {
-        await readFile("accounts.json");
+        await readFile(global.fileName);
         console.log("Api Started");
     } catch (err) {
         const initialJson = {
             nextId: 1,
             accounts: []
         }
-        writeFile("accounts.json", JSON.stringify(initialJson)).then(()=>{
+        writeFile(global.fileName, JSON.stringify(initialJson)).then(()=>{
             console.log("Api Started and file Created");
         })
     }
