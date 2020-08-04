@@ -8,13 +8,13 @@
     },
     {
       "id": 2,
-      "name": "João",
-      "balance": 1200.5
+      "name": "Maria Paula",
+      "balance": 15000
     },
     {
       "id": 3,
-      "name": "Michelle",
-      "balance": 3200.5
+      "name": "Fernanda Leal",
+      "balance": 5200.5
     }
   ]
 }
