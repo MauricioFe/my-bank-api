@@ -10,7 +10,7 @@ router.post("/", async (req, res) => {
         account = {id: data.nextId++, ...account};
         data.accounts.push(account)
 
-        await writeFile("accounts.json", JSON.stringify(data));
+        await writeFile("accounts.json", JSON.stringify(data, null, 2));
         res.send(account);
     } catch (err) {
         res.status(400).send({ erro: err.message })
