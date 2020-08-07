@@ -10,7 +10,7 @@ router.post("/", async (req, res, next) => {
     try {
         let account = req.body;
 
-        if (!account.balance || account.balance == null) {
+        if (!account.name || account.balance == null) {
             throw new Error("Name e Balance são obrigatórios")
         }
 
@@ -72,7 +72,7 @@ router.put("/", async (req, res, next) => {
         if (index == -1) {
             throw new Error("Registro não encontrado");
         }
-        if (!account.balance || account.balance == null) {
+        if (!account.id || !account.name || account.balance == null) {
             throw new Error("Name e Balance são obrigatórios")
         }
         data.accounts[index] = account.name;
@@ -91,7 +91,12 @@ router.patch("/updateBalance", async (req, res, next) => {
         let account = req.body;
         const data = JSON.parse(await readFile(global.fileName));
         const index = data.accounts.findIndex(a => a.id === account.id);
-
+        if (index == -1) {
+            throw new Error("Registro não encontrado");
+        }
+        if (account.balance == null) {
+            throw new Error("Balance são obrigatórios")
+        }
         data.accounts[index].balance = account.balance;
 
         await writeFile(global.fileName, JSON.stringify(data, null, 2));
