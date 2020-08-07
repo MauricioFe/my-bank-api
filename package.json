@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/MauricioFe/my-bank-api#readme",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.17.1",
     "winston": "^3.3.3"
   }
