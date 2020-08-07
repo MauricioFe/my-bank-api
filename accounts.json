@@ -1,20 +1,15 @@
 {
-  "nextId": 4,
+  "nextId": 3,
   "accounts": [
     {
       "id": 1,
-      "name": "Mauricio",
-      "balance": 400.5
+      "name": "Italo",
+      "balance": 150
     },
     {
       "id": 2,
-      "name": "Fernanda",
-      "balance": 150
-    },
-    {
-      "id": 3,
-      "name": "Maria paula",
-      "balance": 150
+      "name": "Mauricio Lacerda",
+      "balance": 450
     }
   ]
 }
